@@ -1,0 +1,5 @@
+Course Lecture : -
+
+1 - table name - tbl_courselectures
+    add column "dateScheduled" and duplicate data from "scheduledate", section_id
+    add column lectureenddate, get by display days
