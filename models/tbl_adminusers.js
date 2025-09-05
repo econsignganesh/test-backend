@@ -11,11 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
 
     static associate(models) {
-
-       tbl_adminusers.belongsTo(models.tbl_usertypes, {
-        foreignKey: 'UserTypeID',
-        as: 'usersType'
-      });
       // define association here
 
       // In models/tbl_adminusers.js or association setup fil
