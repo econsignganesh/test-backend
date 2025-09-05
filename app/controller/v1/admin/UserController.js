@@ -70,14 +70,26 @@ exports.editUser = async (req, res) => {
     const user = await User.findOne({ where: { UserID: userid, IsDeleted: false } });
     if (!user) return res.status(404).json({ message: "User not found" });
 
-    await User.update(req.body, { where: { UserID: userid } });
+    // Map small-case request data to PascalCase fields
+    const updateData = {};
+    if (req.body.firstname) updateData.FirstName = req.body.firstname;
+    if (req.body.lastname) updateData.LastName = req.body.lastname;
+    if (req.body.emailid) updateData.EmailID = req.body.emailid;
+    if (req.body.username) updateData.UserName = req.body.username;
+    if (req.body.mobile) updateData.Mobile = req.body.mobile;
+    if (req.body.password) updateData.Password = req.body.password;
 
-    return res.json({ message: "User updated successfully" });
+    await User.update(updateData, { where: { UserID: userid } });
+
+    const updatedUser = await User.findOne({ where: { UserID: userid } });
+
+    return res.json({ message: "User updated successfully", data: updatedUser });
   } catch (error) {
     console.error("editUser error:", error);
     return res.status(500).json({ message: error.message });
   }
 };
+
 
 // Delete User (soft delete)
 exports.deleteUser = async (req, res) => {
