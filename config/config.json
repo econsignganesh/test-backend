@@ -1,0 +1,38 @@
+{
+  "development": {
+    "username": "428904",
+    "password": "Ganesh@1234",
+    "database": "mydatabase_mydb",
+    "host": "mysql-mydatabase.alwaysdata.net",
+    "dialect": "mysql",
+    "port": 3306,
+    "define": {
+      "timestamps": false
+    },
+    "logging": false
+  },
+  "test": {
+    "username": "428904",
+    "password": "Ganesh@1234",
+    "database": "mydatabase_mydb",
+    "host": "mysql-mydatabase.alwaysdata.net",
+    "dialect": "mysql",
+    "port": 3306,
+    "define": {
+      "timestamps": false
+    },
+    "logging": false
+  },
+  "production": {
+    "username": "428904",
+    "password": "Ganesh@1234",
+    "database": "mydatabase_mydb",
+    "host": "mysql-mydatabase.alwaysdata.net",
+    "dialect": "mysql",
+    "port": 3306,
+    "define": {
+      "timestamps": false
+    },
+    "logging": false
+  }
+}
