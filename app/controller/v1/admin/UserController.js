@@ -78,6 +78,14 @@ exports.editUser = async (req, res) => {
     if (req.body.username) updateData.UserName = req.body.username;
     if (req.body.mobile) updateData.Mobile = req.body.mobile;
     if (req.body.password) updateData.Password = req.body.password;
+    if (req.body.address) updateData.Address = req.body.address;
+    if (req.body.city) updateData.City = req.body.city;
+    if (req.body.state) updateData.State = req.body.state;
+    if (req.body.zipcode) updateData.ZipCode = req.body.zipcode;
+    if (req.body.gender) updateData.Gender = req.body.gender;
+    if (req.body.maritalstatus) updateData.MaritalStatus = req.body.maritalstatus;
+    if (req.body.nationality) updateData.Nationality = req.body.nationality;
+    if (req.body.dateofbirth) updateData.DateOfBirth = req.body.dateofbirth;
 
     await User.update(updateData, { where: { UserID: userid } });
 
@@ -89,6 +97,7 @@ exports.editUser = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
 
 
 // Delete User (soft delete)
