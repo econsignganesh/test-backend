@@ -24,6 +24,11 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: "Invalid password" });
     }
 
+    // Check if user is active
+    if (!user.Status) {
+      return res.status(403).json({ message: "Inactive user, please contact admin" });
+    }
+
     // Login successful
     return res.json({
       message: "Login successful",
