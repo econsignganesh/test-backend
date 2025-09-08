@@ -29,6 +29,7 @@ exports.login = async (req, res) => {
       message: "Login successful",
       data: {
         UserID: user.UserID,
+        UserTypeid: user.UserTypeID,
         FirstName: user.FirstName,
         LastName: user.LastName,
         EmailID: user.EmailID,
